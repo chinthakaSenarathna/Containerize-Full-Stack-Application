@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/containerize-full-stack-app').then(() => {
+mongoose.connect(process.env.MONGODB_URI).then(() => {
   console.log('Connected to MongoDB');
 }).catch((err) => {
   console.error('Error connecting to MongoDB:', err);
